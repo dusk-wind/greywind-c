@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒险者社区</title>
+    <style>
+        *{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            background-image: url("img/2.jpg");
+			background-size: 100%;
+			
+        }
+
+        .nav{
+            width: 1200px;
+            height: 70px;
+            position: fixed;
+            top: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            background-color: #fff;
+			opacity: 0.8;
+			
+			
+        }
+        .nav ul{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            right: 5%;
+        }
+        .nav ul .nav-box{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: calc((100% / 6)*1);
+            height: 10px;
+            border-radius: 2px;
+            transition: .5s;
+        }
+        .nav ul li{
+            width: 100%;
+            text-align: center;
+        }
+        .nav ul li a{
+            color: rgb(70, 100, 180);
+            font: 100 30px ;
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 70px;
+			font-weight:900;
+			font-size:1.25rem;
+			color: #000;
+			opacity: 0.9;
+        }
+        .nav ul li:nth-child(1):hover~.nav-box{
+            left: calc(100% / 6 *0);
+            background-color: rgb(250, 190, 250);
+        }
+        .nav ul li:nth-child(2):hover~.nav-box{
+            left: calc(100% / 6 *1);
+            background-color: red;
+        }
+        .nav ul li:nth-child(3):hover~.nav-box{
+            left: calc(100% / 6 *2);
+            background-color: #d18df8;
+        }
+        .nav ul li:nth-child(4):hover~.nav-box{
+            left: calc(100% / 6 *3);
+            background-color: #ffb1b1;
+        }
+        .nav ul li:nth-child(5):hover~.nav-box{
+            left: calc(100% / 6 *4);
+            background-color: #8da1f8;
+        }
+        .nav ul li:nth-child(6):hover~.nav-box{
+            left: calc(100% / 6 *5);
+            background-color: #7df88e;
+        }
+		.audio-player{
+					position: absolute;
+					top:700px;
+					left:20px;
+					padding: 0;
+					margin: 0;
+					opacity: 1;
+				}
+        #a1{
+        	overflow:hidden;
+        	width: 600px;
+        	border-radius: 20px;
+        	height: 337.328px;
+        	position: fixed;
+        	top:30%;
+        	left:8%;
+        }
+        #a2{
+        	width: 4000px;
+        	
+        	position: absolute;
+        	left: 0px;
+        	animation-duration: 7.5s; 
+        	animation-iteration-count: infinite;
+        	animation-name: a;
+        	
+        }
+        #a3{
+        	float: left;
+        	width: 598px;
+        	height: 337.328px;
+        	padding: 0px 2px 0px 0px;
+        }
+        
+        @keyframes a {
+        	0%   {
+        		position: absolute;
+        		left: 0px;}
+        	15%,25%  {
+        		position: absolute;
+        		left: -600px;
+        	  }
+        	40%,50%  {
+        		position: absolute;
+        		left: -1200px;
+        	  }
+        	65%,75%{
+        		position: absolute;
+        		left: -1800px;
+        	  }
+        	90%,99.9999999999999%{
+        		
+        		position: absolute;
+        		left: -2400px;
+        	  }
+        	100% {
+        		position: absolute;
+        		left: 0px;
+        	  }
+        }
+		.text-bg{
+			color: #000;
+			padding:0 2vmin;
+			background: linear-gradient(30deg,#2cd8d5,#c5c1ff,#ffbac3) center;
+			position: fixed;
+			background-repeat: no-repeat;
+			background-size: 100% 90%;
+			transition: 0.4;
+			top:30%;
+			left:53%;
+			border-radius: 10px;
+		}
+		.text-bg:hover{
+			background-size: 100% 10%;
+			background-position-y:88%;
+			color: #fff;
+			text-shadow: 0.05em 0.05em 0 #fcfcfc,-0.05em 0.05em 0 #fcfcfc,
+			0 0.05 0 #fcfcfc;
+		}
+		.word1{
+			position:fixed;
+			top:35%;
+			left:55%;
+			color: #fcfcfc;
+			text-decoration: underline;
+			text-decoration-color:#ffb1b1;
+		}
+		.word2{
+			position:fixed;
+			top:40%;
+			left:55%;
+			color: #fcfcfc;
+			text-decoration: underline;
+			text-decoration-color:#ffb1b1;
+		}
+		.word3{
+			position:fixed;
+			top:45%;
+			left:55%;
+			color: #fcfcfc;
+			text-decoration: underline;
+			text-decoration-color:#ffb1b1;
+		}
+		.word4{
+			position:fixed;
+			top:50%;
+			left:55%;
+			color: #fcfcfc;
+			text-decoration: underline;
+			text-decoration-color:#ffb1b1;
+		}
+		.word5{
+			position:fixed;
+			top:55%;
+			left:55%;
+			color: #fcfcfc;
+			text-decoration: underline;
+			text-decoration-color:#ffb1b1;
+		}
+		.word6{
+			position:fixed;
+			top:60%;
+			left:55%;
+			color: #fcfcfc;
+			text-decoration: underline;
+			text-decoration-color:#ffb1b1;
+		}
+		.word7{
+			position:fixed;
+			top:65%;
+			left:55%;
+			color: #fcfcfc;
+			text-decoration: underline;
+			text-decoration-color:#ffb1b1;
+		}
+		.word8{
+			position:fixed;
+			top:70%;
+			left:55%;
+			color: #fcfcfc;
+			text-decoration: underline;
+			text-decoration-color:#ffb1b1;
+		}
+		
+		
+		  </style>
+      
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="#">故事</a></li>
+            <li><a href="explore.html">探索</a></li>
+            <li><a href="https://www.bilibili.com/video/BV1G54y1J7tR/?spm_id_from=333.337.search-card.all.click">攻略</a></li>
+            <li><a href="#">活动</a></li>
+            <li><a href="sign.html">签到</a></li>
+            <li><a href="login.html">登入</a></li>
+            <div class="nav-box"></div>
+        </ul>
+    </div>
+	<div id="a1">
+		<div id="a2">
+			<a href="#"><img id="a3" src="img/33.jpg" ></a>
+			<a href="#"><img id="a3" src="img/15.jpg" ></a>
+			<a href="#"><img id="a3" src="img/25.jpg" ></a>
+			<a href="#"><img id="a3" src="img/5.jpg" ></a>
+			<a href="#"><img id="a3" src="img/33.jpg" ></a>
+		</div>
+	</div>
+	<div>
+		<a href="https://www.hytalebbs.com/threads/978/"><h2 class="text-bg">1.9版本全新上线，奏响你的冒险狂响曲</h2></a>
+	</div>
+	<div>
+		<h3 class="word1">最新主线‘冬风’阿尔萨斯的幻影---上映</h3>
+		<h3 class="word2">漫游者剑技---光闪的部分数值进行下调</h3>
+		<h3 class="word3">魔力使职业全新登场---暗之舞会与空之都索罗</h3>
+		<h3 class="word4">海之遗迹---沧粼之都ATM机bug修复</h3>
+		<h3 class="word5">妖刀-村雨 居合附魔对与迅击流的适配性增强</h3>
+		<h3 class="word6">调整万圣节武器---无头骑士之剑的南瓜炸弹追踪效果</h3>
+		<h3 class="word7">新增崩裂者火枪武器分支---变革者</h3>
+		<h3 class="word8">七周年Boss-rush模式开启---倾情打造，隆重呈现</h3>
+		
+	</div>
+	
+	
+ </body>
+	
+
+	
+	
+
+<footer>
+	  <audio loop autoplay class="audio-player" controls>
+		  <source src="img/wet hands.mp3" type="audio/mp3">
+	  </audio>
+  </footer>
+</html> 
