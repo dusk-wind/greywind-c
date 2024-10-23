@@ -1,64 +1,56 @@
 #include <stdio.h>
-#include <stdlib.h>
-#define ElemType int
-#define FALSE 0
-#define TRUE 1
 typedef struct stack
+#define ElemType int
 {
     int top;
     int maxSize;
     ElemType *element;
 }Stack;
-
-void Creat(Stack *S,int mSize)
+void Create(Stack *S,int mSize)
 {
     S->maxSize=mSize;
     S->element=(ElemType*)malloc(sizeof(ElemType)*mSize);
     S->top=-1;
 }
-
 void Destroy(Stack *S)
 {
     S->maxSize=0;
     free(S->element);
     S->top=-1;
 }
-
 int BOOLIsEmpty(Stack *S)
 {
     return S->top==-1;
 }
-
-int BOOLIsFull(Stack *S)
+int BOOLIsFULL(Stack *S)
 {
     return S->top==S->maxSize-1;
 }
-
+//获取栈顶元素
 int BOOLTop(Stack *S,ElemType *x)
 {
-    if(BOOLIsEmpty(S))
-        return FAlSE;
+    if(IsEmpty(S))
+        return 0;
     *x=S->element[S->top];
-    return TRUE;
+    return 1;
 }
-
-char BOOLPush(Stack *S,ElemType *x)
+//入栈操作
+int BOOLPush(Stack *S,ElemType x)
 {
-    if(BOOLIsFull(S))
+    if(IsFull(S))
         return 0;
     S->top++;
     S->element[S->top]=x;
     return 1;
 }
-
+//出栈操作
 int BOOLPop(Stack *S)
 {
-    if(BOOLIsEmpty(S))
-        return FALSE;
+    if (IsEmpty(S))
+       return 0;
     S->top--;
-    return TRUE;
+    return 1;
 }
-
 void Clear(Stack *S)
 {
     S->top=-1;

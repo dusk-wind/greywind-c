@@ -3,12 +3,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdbool.h>
 #define STACKSIZE 20
 #define ITEMSIZE 20
 #define POSTFIXSIZE 200
+#define FALSE 0
+#define TRUE 1
 
-BOOL IsLegal(char *postfix)
+int BOOLIsLegal(char *postfix)
 {
     int i;
     char c;
@@ -95,7 +96,7 @@ double Caculating(char *postfix)
     int curPos=0;
     while(postfix[curPos]==' ')
      curPos++;
-    Create(&S,STACKSIZE);
+    Creat(&S,STACKSIZE);
     while(curPos<strlen(postfix))
     {
         flag=GetItem(postfix,&curPos,item);
